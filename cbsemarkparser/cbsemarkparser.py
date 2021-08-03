@@ -1,8 +1,9 @@
 import xlsxwriter
 from xlsxwriter import Workbook
+import sys
 
-std = '10'
-filename = '45004-10th.TXT'
+std = sys.argv[1]
+filename = sys.argv[2]
 output_filename = filename + '.xlsx'
 try:
     from itertools import izip_longest  # added in Py 2.6
