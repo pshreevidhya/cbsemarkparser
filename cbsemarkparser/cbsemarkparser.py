@@ -136,8 +136,8 @@ wb = Workbook(output_filename)
 result_sheet = wb.add_worksheet(std + 'th Results')
 
 result_sheet.write(0, 0, 'Roll Number')
-result_sheet.write(0, 1, 'Gender')
-result_sheet.write(0, 2, 'Name')
+result_sheet.write(0, 1, 'Name')
+result_sheet.write(0, 2, 'Gender')
 colNumber = 2
 for k, v in subject[std].items():
     colNumber = colNumber + 1
@@ -161,9 +161,9 @@ for student in students:
     colNumber = 0
     result_sheet.write(rowNumber, colNumber, student['rollno'])
     colNumber = colNumber + 1
-    result_sheet.write(rowNumber, colNumber, student['gender'])
-    colNumber = colNumber + 1
     result_sheet.write(rowNumber, colNumber, student['name'])
+    colNumber = colNumber + 1
+    result_sheet.write(rowNumber, colNumber, student['gender'])
     for subject_code, subject_name in subject[std].items():
         if subject_code in student['marks']:
             m = student['marks'][subject_code]['mark']
