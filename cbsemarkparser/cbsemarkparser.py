@@ -144,12 +144,14 @@ for k, v in subject[std].items():
     result_sheet.write(0, colNumber, v)
     colNumber = colNumber + 1
     result_sheet.write(0, colNumber, v + " grade")
-colNumber = colNumber + 1
-result_sheet.write(0, colNumber, "gr1")
-colNumber = colNumber + 1
-result_sheet.write(0, colNumber, "gr2")
-colNumber = colNumber + 1
-result_sheet.write(0, colNumber, "gr3")
+
+if(std == '12'):
+    colNumber = colNumber + 1
+    result_sheet.write(0, colNumber, "gr1")
+    colNumber = colNumber + 1
+    result_sheet.write(0, colNumber, "gr2")
+    colNumber = colNumber + 1
+    result_sheet.write(0, colNumber, "gr3")
 colNumber = colNumber + 1
 result_sheet.write(0, colNumber, "Result")
 
@@ -173,12 +175,13 @@ for student in students:
         result_sheet.write(rowNumber, colNumber, m)
         colNumber = colNumber + 1
         result_sheet.write(rowNumber, colNumber, gr)
-    colNumber = colNumber + 1
-    result_sheet.write(rowNumber, colNumber, student['gr1'])
-    colNumber = colNumber + 1
-    result_sheet.write(rowNumber, colNumber, student['gr2'])
-    colNumber = colNumber + 1
-    result_sheet.write(rowNumber, colNumber, student['gr3'])
+    if(std == '12'):
+        colNumber = colNumber + 1
+        result_sheet.write(rowNumber, colNumber, student['gr1'])
+        colNumber = colNumber + 1
+        result_sheet.write(rowNumber, colNumber, student['gr2'])
+        colNumber = colNumber + 1
+        result_sheet.write(rowNumber, colNumber, student['gr3'])
     colNumber = colNumber + 1
     result_sheet.write(rowNumber, colNumber, student['result'])
 
